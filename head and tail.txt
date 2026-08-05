@@ -1,6 +1,0 @@
-head filename (deafault it shows 10lines)
-head -5 filename 
-tail filename
-tail -4 filename
-tail -n 5 filename
-tail -f filename (to see file logs)
