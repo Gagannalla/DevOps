@@ -1,0 +1,43 @@
+groupadd groupname
+cat /etc/group
+groupdel groupname
+
+why groups? 
+to manage users by providing permissios to gropus
+
+
+usermod -a -G groupname username (to add users into groups)
+id username (to see groups)
+
+
+*****Users******
+sudo adduser username
+useradd username (to create user)
+id username (to verify)
+
+uid
+gid
+group
+
+
+cat /etc/passwd 
+cat /etc/passwd | grep gagan
+
+userdel -r username (r to completely)
+
+LDAP - linix Admin (Lightweight Directory Access Protocol) for On prem
+
+
+
+******Permissions*****
+user groups other
+
+r w x = 4 2 1 
+
+chmod 755 username
+chmod -R 444 aws/ (to apply at dorectory leavel to reflect in inside files of directory)
+
+chown username:username filename (to make unsername as owner)
+
+       user - group 
+

@@ -1,0 +1,18 @@
+/ 
+
+/bin user - binaries
+/boot - Boot loader files
+/dev - device files
+/etc- config files
+/home- users
+/lib - libraries
+/mnt - mnt
+/proc
+/root
+/sbin etc..
+/sys
+/tmp
+/usr
+/var
+
+

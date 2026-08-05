@@ -1,0 +1,25 @@
+Linux: it's an OS it has many flavours like ubuntu etc..
+wsl.exe install
+
+hostnamectl
+cd - it will bring to the very first
+pwd
+ls 
+ls -l
+ls -la (shows hidden files  and hidden files starts with dot)
+touch newfile (to create new files)
+
+
+
+sudo su- (admin)
+sudo apt update
+sudo apt install ncal
+cal -3 
+date
+history
+clear(cntrl+L)
+
+ping google.com (icmp protical sub be enabled)
+curl https://google.com
+
+

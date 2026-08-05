@@ -1,0 +1,18 @@
+TAR stands for Tape Archive.
+
+It is a utility used to combine multiple files and directories into a single archive file. Unlike ZIP, tar by itself does not compress files; it only archives them. Compression is usually added using gzip or bzip2.
+
+tar -cvf backup.tar myfolder/
+c = Create
+v = Verbose (show files)
+f = File name
+
+tar -xvf backup.tar
+
+tar -xvf backup.tar -C /tmp/
+
+
+ZIP
+
+zip ms.zip filename 
+unzip ms.zip
