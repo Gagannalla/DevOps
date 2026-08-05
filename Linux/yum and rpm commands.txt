@@ -1,0 +1,50 @@
+****YUM**********
+
+YUM : to install packages in servers - Yellowdog Updater Modified
+
+yum install git
+
+yum remove appname
+yum update git*
+
+yum search git
+yum list (to see installed packages)
+yum list |grep yaml.x84
+yum info git 
+
+yum history
+
+yum install httpd       # Install
+yum remove httpd        # Remove
+yum update              # Update all packages
+yum search httpd        # Search package
+yum list installed      # List installed packages
+
+
+****RPM******
+.rpm
+
+In Unix/Linux, RPM stands for Red Hat Package Manager.
+
+It is a package management system used to install, update, verify, and remove software packages on RPM-based Linux distributions such as:
+
+Red Hat Enterprise Linux (RHEL)
+CentOS
+Rocky Linux
+AlmaLinux
+Fedora
+Oracle Linux
+
+wget https://.....rpm
+
+rpm -ivh package name
+
+rpm -qa 
+
+rpm -qa                 # List installed packages
+rpm -q httpd            # Check package
+rpm -e httpd            # Remove package
+rpm -ivh file.rpm       # Install package
+
+RPM = package installer.
+YUM = package manager that uses RPM and also handles dependencies and repositories.
