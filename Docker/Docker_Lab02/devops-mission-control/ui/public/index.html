@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DevOps Mission Control</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="ambient a"></div><div class="ambient b"></div>
+<header class="topbar">
+  <div class="brand"><div class="logo">✦</div><div><strong>MISSION CONTROL</strong><small>DEVOPS TRAINING ENVIRONMENT</small></div></div>
+  <div class="topright"><span class="live-dot"></span> LOCAL CLUSTER <span class="pill">DOCKER COMPOSE</span></div>
+</header>
+<main>
+  <section class="hero">
+    <div><p class="eyebrow">YOUR PERSONAL SANDBOX / 001</p><h1>Ship it.<br><span>Break it. Fix it.</span></h1>
+    <p class="sub">A live microservices playground. Six services, two networks, one command to run it all.</p></div>
+    <div class="hero-mark"><div class="orbit o1"></div><div class="orbit o2"></div><div class="core">DOCKER<br><b>LAB</b></div><span class="sat s1">UI</span><span class="sat s2">API</span><span class="sat s3">DB</span><span class="sat s4">CACHE</span></div>
+  </section>
+  <section class="stats">
+    <article class="stat"><span class="stat-label">SERVICES IN STACK</span><strong>06</strong><small>Compose-managed</small></article>
+    <article class="stat"><span class="stat-label">CUSTOM IMAGES</span><strong>03</strong><small>Built from Dockerfiles</small></article>
+    <article class="stat"><span class="stat-label">DATA LAYERS</span><strong>02</strong><small>Postgres + Redis</small></article>
+    <article class="stat"><span class="stat-label">CLUSTER STATUS</span><strong class="green" id="overall">CHECKING</strong><small id="last-check">Probing services…</small></article>
+  </section>
+  <section class="section-head"><div><p class="eyebrow">01 / SYSTEM TOPOLOGY</p><h2>Service map</h2></div><button class="btn secondary" id="refresh">↻ Refresh status</button></section>
+  <section class="topology">
+    <div class="node ui-node"><div class="node-icon">▣</div><div><b>Frontend UI</b><small>Nginx · Port 8080</small></div><span class="status" id="ui-status">LOCAL</span></div>
+    <div class="connector"><span>HTTP</span>↓</div>
+    <div class="node gateway-node"><div class="node-icon">⇄</div><div><b>API Gateway</b><small>Nginx reverse proxy</small></div><span class="status" id="gateway-status">PROXY</span></div>
+    <div class="connector"><span>PRIVATE BACKNET</span>↓</div>
+    <div class="service-grid">
+      <div class="node"><div class="node-icon orange">◈</div><div><b>Incident API</b><small>Node.js · :3001</small></div><span class="status" id="incidents-status">…</span></div>
+      <div class="node"><div class="node-icon purple">✓</div><div><b>Task API</b><small>Python · :3002</small></div><span class="status" id="tasks-status">…</span></div>
+      <div class="node"><div class="node-icon blue">▤</div><div><b>PostgreSQL</b><small>Persistent storage</small></div><span class="status" id="db-status">PRIVATE</span></div>
+      <div class="node"><div class="node-icon pink">ϟ</div><div><b>Redis</b><small>Cache + counter</small></div><span class="status" id="cache-status">PRIVATE</span></div>
+    </div>
+  </section>
+  <section class="section-head"><div><p class="eyebrow">02 / LIVE DATA</p><h2>Operations desk</h2></div><span class="hint">Changes persist in PostgreSQL</span></section>
+  <div class="work-grid">
+    <section class="panel"><div class="panel-title"><div><span class="mini-icon orange">◈</span><b>Incident tracker</b></div><span id="incident-count" class="count">0 RECORDS</span></div>
+      <form id="incident-form" class="inline-form"><input id="incident-title" placeholder="Describe an incident…" maxlength="120" required><select id="severity"><option>LOW</option><option selected>MEDIUM</option><option>HIGH</option><option>CRITICAL</option></select><button class="btn" type="submit">+ Create</button></form>
+      <div id="incidents-list" class="records"><div class="empty">Loading incidents…</div></div>
+    </section>
+    <section class="panel"><div class="panel-title"><div><span class="mini-icon purple">✓</span><b>Mission checklist</b></div><span id="task-count" class="count">0 TASKS</span></div>
+      <form id="task-form" class="inline-form"><input id="task-title" placeholder="Add a lab objective…" maxlength="120" required><button class="btn" type="submit">+ Add</button></form>
+      <div id="tasks-list" class="records"><div class="empty">Loading tasks…</div></div>
+    </section>
+  </div>
+  <section class="section-head"><div><p class="eyebrow">03 / LEARN BY DOING</p><h2>Lab console</h2></div></section>
+  <section class="console">
+    <div class="console-bar"><span class="window-dot red"></span><span class="window-dot yellow"></span><span class="window-dot green-dot"></span><span>docker compose · quick commands</span></div>
+    <div class="console-body"><p><i>$</i> docker compose ps <em># inspect running services</em></p><p><i>$</i> docker compose logs -f incidents <em># stream API logs</em></p><p><i>$</i> docker compose up -d --build tasks <em># rebuild one service</em></p><p><i>$</i> docker compose down <em># stop the stack</em></p><div class="console-note">Tip: run these commands from the folder containing <code>compose.yaml</code>.</div></div>
+  </section>
+  <footer><span>MISSION CONTROL <b>·</b> LOCAL DEVOPS LAB</span><span>BUILD • OBSERVE • TROUBLESHOOT • REPEAT</span></footer>
+</main>
+<div id="toast" role="status"></div>
+<script src="/app.js"></script>
+</body></html>

@@ -1,0 +1,9 @@
+{
+  "name": "mission-control-incidents",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Incident microservice for DevOps Mission Control",
+  "main": "server.js",
+  "scripts": {"start": "node server.js"},
+  "dependencies": {"pg": "8.13.1", "redis": "4.7.0"}
+}
