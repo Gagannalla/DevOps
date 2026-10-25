@@ -8,3 +8,4 @@ git status
 git add . (Use: Adds new and modified files to Git's staging area.)
 git commit -m "Added Docker push pull notes" (Use: Creates a checkpoint/snapshot.)
 git push origin main (Use: Uploads local commits to GitHub.)
+now you will see new files in Github
