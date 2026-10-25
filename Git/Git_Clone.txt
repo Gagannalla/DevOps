@@ -1,0 +1,10 @@
+In this file am going to clone a folder from GitHub and then do change to commit the changes we made.
+
+C:\Users>git clone https://github.com/Gagannalla/DevOps.git
+git pull origin main (to keep our local updated)
+dir C:\Users (to check whther folder reflecting in oath or not)
+cd C:\Users\DevOps (inside folder we gonna add new files)
+git status
+git add . (Use: Adds new and modified files to Git's staging area.)
+git commit -m "Added Docker push pull notes" (Use: Creates a checkpoint/snapshot.)
+git push origin main (Use: Uploads local commits to GitHub.)
