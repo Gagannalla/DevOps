@@ -56,26 +56,50 @@ This is why containers are lighter and faster than full virtual machines.
 ## Quick Docker mind map
 
 ```text
-                             Docker
-                                │
-           ┌──────────────────────┼──────────────────────┐
-           │                      │                      │
-           ▼                      ▼                      ▼
-        Image                Container              Dockerfile
-           │                      │                      │
-           │                      │                      ▼
-           │                      │               Build image
-           │                      │                      │
-           │                      ▼                      ▼
-           │                   Runs app              Registry
-           │                                            │
-           └────────────────────────────────────────────┴───────
-                                                      Pull / Push
+          Docker
+            |
+      +-----+-----+
+      |           |
+      v           v
+   Image       Container
+      |           |
+      |           v
+      |        Runs app
+      |
+      v
+   Dockerfile --> Build Image --> Registry --> Pull/Push
 ```
 
 ---
 
 ## Why do we use Docker?
+
+Command examples:
+
+```bash
+docker --version
+docker run hello-world
+```
+
+## Docker commands explained
+
+Docker commands are like instructions you give to Docker Engine.
+
+```bash
+docker run          # start a container from an image
+docker build        # build an image from a Dockerfile
+docker pull         # download an image from a registry
+docker push         # upload a local image to a registry
+docker images       # list all local images
+docker ps           # list running containers
+docker ps -a        # list all containers, including stopped ones
+docker stop         # stop a running container
+docker rm           # remove a container
+docker rmi          # remove an image
+docker logs         # view container logs
+docker exec         # run a command inside a running container
+docker tag          # assign or change a tag to an image
+```
 
 ### 1. Same app on every machine
 Docker gives the same environment every time. So the app behaves the same on a developer machine, testing server, and production server.
@@ -114,6 +138,13 @@ With Docker, you package the app with the correct Java version and dependencies 
 
 # Docker and Virtual Machines
 
+Command examples:
+
+```bash
+docker ps
+docker images
+```
+
 Both Docker and virtual machines are used to isolate applications, but they are not the same.
 
 ## Virtual Machine
@@ -136,6 +167,13 @@ A Docker container is more like a lightweight package that runs the app inside t
 ---
 
 # Similar Tools and Alternatives to Docker
+
+Command examples:
+
+```bash
+docker run -d --name mynginx -p 8080:80 nginx
+podman run -d -p 8081:80 nginx
+```
 
 Docker is popular, but there are other tools in the same area.
 
@@ -169,6 +207,14 @@ CRI-O is a lightweight container runtime designed for Kubernetes. It is often us
 
 # Important Docker Concepts
 
+Command examples:
+
+```bash
+docker info
+docker version
+docker build -t myapp .
+```
+
 ## 1. Docker Engine
 Docker Engine is the main software that builds and runs containers. It includes the runtime, APIs, and image support.
 
@@ -192,6 +238,45 @@ It includes:
 - Application code
 
 Think of an image as a template.
+
+### Tagging a custom image
+A tag is a label attached to an image. It helps you identify the version or purpose of the image.
+
+```bash
+# build image with a tag
+docker build -t myapp:1.0 .
+
+# build image with latest tag
+docker build -t myapp:latest .
+
+# view local images
+docker images
+
+# run a container using the tagged image
+docker run -d -p 8080:80 --name myapp-container myapp:1.0
+```
+
+General syntax:
+
+```bash
+docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+```
+
+Example:
+
+```bash
+docker tag myapp:latest mydockerhubuser/myapp:1.0
+```
+
+This means:
+- `myapp:latest` is the source image
+- `mydockerhubuser/myapp:1.0` is the new tagged version
+
+The tag helps you track versions like:
+- `app:dev`
+- `app:prod`
+- `app:v1.2`
+- `app:latest`
 
 ## 5. Container
 A container is a running instance of an image. It is isolated, portable, and lightweight.
