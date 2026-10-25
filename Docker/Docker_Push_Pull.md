@@ -67,7 +67,7 @@ Build the image:
 docker build -t my-portfolio .
 
 ## Note:
-If build comamd  files run the below in Powershell
+If build command files run the below in Powershell
 dir (check if dockerfile is in .txt if yes run ren Dockerfile.txt Dockerfile to avoid .txt)
 
 ## Explanation
