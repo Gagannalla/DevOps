@@ -6,6 +6,5 @@ Now start Docker Desktop
 
 Step 2
 C:\Users\gagan\gagan>
-![
-    
-](image-1.png)
+![Docker Build](image-1.png)
+
